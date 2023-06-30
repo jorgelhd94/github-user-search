@@ -1,12 +1,14 @@
 ---
-import Container from "@components/container.astro";
+import Container from "@components/organisms/Container/Container.astro";
 import Layout from "@layouts/Layout.astro";
+import ThemeToggle from "@components/molecules/ThemeToggle/ThemeToggle.astro";
 
 const hello = "Hello astro world!!!";
 ---
 
-<Layout title="">
+<Layout>
   <Container>
     {hello}
+    <ThemeToggle />
   </Container>
 </Layout>

@@ -1,7 +1,5 @@
 ---
 import { SEO } from "astro-seo";
-import Footer from "@components/footer.astro";
-import Navbar from "@components/navbar/navbar.astro";
 import "@fontsource/inter/variable.css";
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
@@ -15,8 +13,26 @@ const resolvedImageWithDomain = new URL(
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
+    <script is:inline>
+      // ☝️ This script prevent the FART effect.
+      if (localStorage.getItem("theme") === null) {
+        document.documentElement.setAttribute("data-theme", "light");
+      } else
+        document.documentElement.setAttribute(
+          "data-theme",
+          localStorage.getItem("theme")
+        );
+      // "theme" LocalStorage value is set by the package to remember user preference.
+      // The value is checked and applyed before rendering anything.
+    </script>
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/theme-toggles@4.10.1/css/expand.min.css"
+    />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
     <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
@@ -38,9 +54,7 @@ const resolvedImageWithDomain = new URL(
     />
   </head>
   <body>
-    <Navbar />
     <slot />
-    <Footer />
     <style is:global>
       /* Improve Page speed */
       /* https://css-tricks.com/almanac/properties/c/content-visibility/ */
