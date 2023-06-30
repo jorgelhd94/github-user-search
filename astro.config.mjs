@@ -6,6 +6,7 @@ import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://astroship.web3templates.com",
+  site: "https://jorgelhd94.github.io",
+  base: '/github-user-search',
   integrations: [tailwind(), mdx(), sitemap(), react()]
 });
