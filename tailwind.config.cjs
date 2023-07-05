@@ -11,6 +11,16 @@ module.exports = {
   },
   plugins: [require("@tailwindcss/typography"), require("daisyui")],
   daisyui: {
-    themes: ["light", "dracula"],
+    themes: [
+      "light",
+      {
+        dracula: {
+          ...require("daisyui/src/theming/themes")["[data-theme=dracula]"],
+          "body": {
+            "background-color": "#0D1117",
+          },
+        },
+      },
+    ],
   },
 };
