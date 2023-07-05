@@ -13,20 +13,6 @@ const resolvedImageWithDomain = new URL(
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
-    <script is:inline>
-      // ☝️ This script prevent the FART effect.
-      if (localStorage.getItem("theme") === null) {
-        document.documentElement.setAttribute("data-theme", "light");
-      } else
-        document.documentElement.setAttribute(
-          "data-theme",
-          localStorage.getItem("theme")
-        );
-      // "theme" LocalStorage value is set by the package to remember user preference.
-      // The value is checked and applyed before rendering anything.
-    </script>
-
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link
@@ -34,6 +20,18 @@ const resolvedImageWithDomain = new URL(
       href="https://cdn.jsdelivr.net/npm/theme-toggles@4.10.1/css/expand.min.css"
     />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <script is:inline>
+      if (localStorage.getItem("theme") === null) {
+        document.documentElement.setAttribute("data-theme", "light");
+      } else
+        document.documentElement.setAttribute(
+          "data-theme",
+          localStorage.getItem("theme")
+        );
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"
+    ></script>
 
     <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
     <SEO
