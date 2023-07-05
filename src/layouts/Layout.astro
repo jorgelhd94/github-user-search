@@ -22,12 +22,12 @@ const resolvedImageWithDomain = new URL(
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
     <script is:inline>
-      if (localStorage.getItem("theme") === null) {
+      if (localStorage.getItem("theme-github") === null) {
         document.documentElement.setAttribute("data-theme", "light");
       } else
         document.documentElement.setAttribute(
           "data-theme",
-          localStorage.getItem("theme")
+          localStorage.getItem("theme-github")
         );
     </script>
     <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"
