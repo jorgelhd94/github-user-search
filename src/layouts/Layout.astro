@@ -16,12 +16,21 @@ const resolvedImageWithDomain = new URL(
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/github-user-search/favicon.svg"
+    />
+    <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/theme-toggles@4.10.1/css/expand.min.css"
     />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
     <script is:inline>
+      // This was causing troubles with the daysi theme
+      if (localStorage.getItem("theme")) {
+        localStorage.removeItem("theme");
+      }
+
       if (localStorage.getItem("theme-github") === null) {
         document.documentElement.setAttribute("data-theme", "light");
       } else
