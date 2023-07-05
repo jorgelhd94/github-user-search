@@ -1,0 +1,7 @@
+[data-theme="light"] .githubImageDark {
+  display: none;
+}
+
+[data-theme="dracula"] .githubImageLight {
+    display: none;
+  }
