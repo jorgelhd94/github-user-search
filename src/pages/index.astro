@@ -2,13 +2,12 @@
 import Container from "@components/organisms/Container/Container.astro";
 import Layout from "@layouts/Layout.astro";
 import ThemeToggle from "@components/molecules/ThemeToggle/ThemeToggle.astro";
-
-const hello = "Hello astro world!!!";
+import GithubLogo from "@components/atoms/logos/GithubLogo/GithubLogo";
 ---
 
 <Layout>
   <Container>
-    {hello}
+    <GithubLogo/>
     <ThemeToggle />
   </Container>
 </Layout>

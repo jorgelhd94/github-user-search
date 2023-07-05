@@ -24,7 +24,7 @@
 <script is:inline>
   const checkboxTheme = document.querySelector("input[type='checkbox']");
 
-  if (localStorage.getItem("theme-github") === "dark") {
+  if (localStorage.getItem("theme-github") === "dracula") {
     checkboxTheme.checked = true;
   } else {
     checkboxTheme.checked = false;
@@ -33,8 +33,8 @@
   // Toggle theme and save to local storage when checkbox is checked
   checkboxTheme.addEventListener("change", () => {
     if (checkboxTheme.checked) {
-      document.documentElement.setAttribute("data-theme", "dark");
-      localStorage.setItem("theme-github", "dark");
+      document.documentElement.setAttribute("data-theme", "dracula");
+      localStorage.setItem("theme-github", "dracula");
     } else {
       document.documentElement.setAttribute("data-theme", "light");
       localStorage.setItem("theme-github", "light");
